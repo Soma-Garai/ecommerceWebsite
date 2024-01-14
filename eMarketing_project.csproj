@@ -262,6 +262,7 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\User\Restock.cshtml" />
     <Content Include="Views\User\AddToCart.cshtml" />
+    <Content Include="Views\User\orderPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

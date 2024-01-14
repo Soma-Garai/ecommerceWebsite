@@ -261,6 +261,9 @@ namespace eMarketing_project.Controllers
             }
             return cartlist;
         }
-
+        public ActionResult orderPage(int cart_id)
+        {
+            return View();
+        }
     }
 }
