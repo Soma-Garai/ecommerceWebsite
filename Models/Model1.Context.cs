@@ -31,5 +31,7 @@ namespace eMarketing_project.Models
         public virtual DbSet<tbl_user> tbl_user { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<tbl_cart> tbl_cart { get; set; }
+        public virtual DbSet<tbl_order> tbl_order { get; set; }
+        public virtual DbSet<tbl_orderDetails> tbl_orderDetails { get; set; }
     }
 }

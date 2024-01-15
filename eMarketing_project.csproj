@@ -168,6 +168,12 @@
     <Compile Include="Models\tbl_category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tbl_order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_orderDetails.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tbl_product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

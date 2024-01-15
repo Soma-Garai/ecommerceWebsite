@@ -11,21 +11,14 @@ namespace eMarketing_project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    public partial class tbl_cart
-    {
-        public int cart_id { get; set; }
-        public Nullable<int> user_id { get; set; }
-        public Nullable<int> pro_id { get; set; }
-        public Nullable<int> Quantity { get; set; }
-        public string AddedOn { get; set; }
-        public Nullable<bool> CartPro_Status { get; set; }
     
+    public partial class tbl_orderDetails
+    {
+        public int orderdetails_id { get; set; }
+        public Nullable<int> order_id { get; set; }
+        public Nullable<int> prod_id { get; set; }
+    
+        public virtual tbl_order tbl_order { get; set; }
         public virtual tbl_product tbl_product { get; set; }
-        public virtual tbl_user tbl_user { get; set; }
-      
-        [NotMapped]
-        public string pro_name { get; set; }
     }
 }

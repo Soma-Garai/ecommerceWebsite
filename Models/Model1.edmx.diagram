@@ -16,6 +16,11 @@
         <EntityTypeShape EntityType="dbmarketingModel.tbl_cart" Width="1.5" PointX="8.5" PointY="3.125" />
         <AssociationConnector Association="dbmarketingModel.FK__tbl_cart__pro_id__5DCAEF64" />
         <AssociationConnector Association="dbmarketingModel.FK__tbl_cart__user_i__5CD6CB2B" />
+        <EntityTypeShape EntityType="dbmarketingModel.tbl_order" Width="1.5" PointX="5.25" PointY="7.5" />
+        <EntityTypeShape EntityType="dbmarketingModel.tbl_orderDetails" Width="1.5" PointX="8.5" PointY="7.25" />
+        <AssociationConnector Association="dbmarketingModel.FK__tbl_order__order__00200768" />
+        <AssociationConnector Association="dbmarketingModel.FK__tbl_order__user___7D439ABD" />
+        <AssociationConnector Association="dbmarketingModel.FK__tbl_order__prod___01142BA1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -18,6 +18,7 @@ namespace eMarketing_project.Models
         public tbl_product()
         {
             this.tbl_cart = new HashSet<tbl_cart>();
+            this.tbl_orderDetails = new HashSet<tbl_orderDetails>();
         }
     
         public int pro_id { get; set; }
@@ -33,5 +34,7 @@ namespace eMarketing_project.Models
         public virtual tbl_user tbl_user { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_cart> tbl_cart { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_orderDetails> tbl_orderDetails { get; set; }
     }
 }

@@ -261,9 +261,40 @@ namespace eMarketing_project.Controllers
             }
             return cartlist;
         }
-        public ActionResult orderPage(int cart_id)
+        public ActionResult OrderNow(tbl_cart cart)
         {
-            return View();
+            int u_id = Convert.ToInt32(Session["u_id"].ToString());
+            Random rnd = new Random();
+            int num = rnd.Next();
+
+
+
+            //First insert
+            tbl_order order = new tbl_order();
+            order.order_id = num;
+            order.user_id = Convert.ToInt32(Session["u_id"].ToString());
+            order.addedOn = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+            db.tbl_order.Add(order);
+            db.SaveChanges();
+
+            //Second insert to order details
+
+            List<tbl_cart> cartlist = allCartItems(u_id);
+
+            foreach (tbl_cart c in cartlist)
+            {
+
+                tbl_orderDetails details = new tbl_orderDetails();
+
+                details.order_id = num;
+                details.prod_id = c.pro_id;
+                db.tbl_orderDetails.Add(details);
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
         }
+
+        
     }
 }

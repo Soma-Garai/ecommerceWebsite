@@ -11,21 +11,21 @@ namespace eMarketing_project.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    public partial class tbl_cart
-    {
-        public int cart_id { get; set; }
-        public Nullable<int> user_id { get; set; }
-        public Nullable<int> pro_id { get; set; }
-        public Nullable<int> Quantity { get; set; }
-        public string AddedOn { get; set; }
-        public Nullable<bool> CartPro_Status { get; set; }
     
-        public virtual tbl_product tbl_product { get; set; }
+    public partial class tbl_order
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbl_order()
+        {
+            this.tbl_orderDetails = new HashSet<tbl_orderDetails>();
+        }
+    
+        public int order_id { get; set; }
+        public Nullable<int> user_id { get; set; }
+        public string addedOn { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_orderDetails> tbl_orderDetails { get; set; }
         public virtual tbl_user tbl_user { get; set; }
-      
-        [NotMapped]
-        public string pro_name { get; set; }
     }
 }
