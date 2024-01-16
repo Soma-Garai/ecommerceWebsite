@@ -269,7 +269,7 @@ namespace eMarketing_project.Controllers
 
 
 
-            //First insert
+            //First insert to order
             tbl_order order = new tbl_order();
             order.order_id = num;
             order.user_id = Convert.ToInt32(Session["u_id"].ToString());
@@ -290,6 +290,11 @@ namespace eMarketing_project.Controllers
                 details.prod_id = c.pro_id;
                 db.tbl_orderDetails.Add(details);
                 db.SaveChanges();
+                //remove from cart after adding to order table
+                c.CartPro_Status = false;
+                db.Entry(c).State = EntityState.Modified;
+                db.SaveChanges();
+
             }
 
             return RedirectToAction("Index");
